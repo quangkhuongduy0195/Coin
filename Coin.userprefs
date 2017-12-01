@@ -1,7 +1,14 @@
 ﻿<Properties StartupConfiguration="{3EB8B50D-EAE7-4EE6-B727-1F112D85C4FD}|Default">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Coin/Modal/Pokemon.cs">
+    <Files>
+      <File FileName="Coin/View/CoinPage.xaml" Line="11" Column="31" />
+      <File FileName="Coin/ViewModal/CoinPage.xaml.cs" Line="18" Column="49" />
+      <File FileName="Coin/ViewModal/App.xaml.cs" Line="16" Column="43" />
+      <File FileName="Coin/Modal/Pokemon.cs" Line="19" Column="18" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Coin.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A2F90225-C45B-4278-A273-4FFED0BEEB5D">
+  <MonoDevelop.Ide.ItemProperties.Coin.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A55FB284-9614-4E0A-AD33-5AC313031080">
     <MonoDevelop.MacDev.AppleDevelopmentTeam />
   </MonoDevelop.Ide.ItemProperties.Coin.iOS>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

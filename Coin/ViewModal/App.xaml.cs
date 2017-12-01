@@ -8,7 +8,7 @@ namespace Coin
         {
             InitializeComponent();
 
-            MainPage = new CoinPage();
+            MainPage = new NavigationPage(new CoinPage());
         }
 
         protected override void OnStart()
