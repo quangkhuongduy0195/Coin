@@ -1,15 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Coin" x:Class="Coin.CoinPage">
-    <ListView x:Name="mListView" ItemsSource="{Binding Collection}" BackgroundColor="Teal">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Coin;assembly=Coin"
+    x:Class="Coin.CoinPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ColorConverter x:Key="colorConverter">
+            </local:ColorConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ListView x:Name="mListView"
+        ItemsSource="{Binding Collection}"
+        BackgroundColor="Teal"
+        ItemSelected="Handle_ItemSelected"
+        IsPullToRefreshEnabled="True"
+        Refreshing="Handle_Refreshing"
+        IsRefreshing="{Binding isRefresh}">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10,0,10,0">
-                        <Label Text="{Binding Number}" Margin="0,0,10,0" />
-                        <Label Text="{Binding Name}" />
+                    <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" VerticalOptions="FillAndExpand" BackgroundColor="Silver">
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" VerticalOptions="Center" Padding="10,0,10,0" BackgroundColor="Silver">
+                            <Label Text="{Binding rank, StringFormat='{0:D3}'}" Margin="0,0,10,0" TextColor="{Binding rank, Converter={StaticResource colorConverter}}" />
+                            <Label Text="{Binding symbol}" TextColor="{Binding rank, Converter={StaticResource colorConverter}}" />
+                        </StackLayout>
+                        <!--<StackLayout WidthRequest="50" VerticalOptions="Center">
+                             <local:IconView x:Name="img" WidthRequest="32" HeightRequest="32"  Source="up.png" />
+                        </StackLayout>-->
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
+        <ListView.Footer>
+            <Button Text="Remove Last Item" Clicked="Handle_Clicked" TextColor="White" />
+        </ListView.Footer>
     </ListView>
 </ContentPage>
